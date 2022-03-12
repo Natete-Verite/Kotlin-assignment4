@@ -5,10 +5,18 @@ fun main(){
     count()
     var y=identification(arrayOf("Umuhoza","Natete","Verite"))
     println(y)
+    num(arrayOf(1,2,3,4,5))
+    var s = sumIntegers(arrayOf("Kenya",5,3.2,false,7,1.2))
+    println(s)
+    var d = identification("judy","wanjiru","wainaina")
+    println(d.contentToString())
 }
 fun home(thing1:String,thing2:String,thing3:String,thing4:String){
     var thi = arrayOf(thing1,thing2,thing3,thing4)
     println(thi.contentToString())
+    var y = num(arrayOf(1,2,3,4,5))
+    println(y)
+
 }
 fun capitals(){
     var cities = arrayOf("harare","mumbai","dodoma","jakarta")
@@ -28,5 +36,29 @@ fun count(){
 }
 fun identification(such:Array<String>):String{
     var name = such.contentToString()
+    return name
+}
+fun num(numbers:Array<Int>):Int{
+    var numb =0
+    numbers.forEach { num->
+        numb += num
+    }
+        println(numb)
+    return numb
+
+}
+//create a function that takes in an array of mixed types and sums up integers only
+
+fun sumIntegers(medly: Array<Any>):Int{
+    var sum = 0
+    medly.forEach { el ->
+        if (el is Int){
+            sum+= el
+        }
+    }
+    return sum
+}
+fun identification(a:String,b:String,c:String):Array<String> {
+    var name = arrayOf(a, b, c)
     return name
 }
